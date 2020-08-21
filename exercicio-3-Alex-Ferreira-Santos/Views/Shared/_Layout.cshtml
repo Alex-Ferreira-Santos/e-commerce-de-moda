@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Moda</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site2.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="#"><h3 id="logo">Logo</h3></a>
+        <div id="search-bar">
+            <input type="text" name="pesquisa" id="pesquisa" placeholder="pesquisar...">
+            <img src="~/images/magnifying-glass.png" alt="pesquisa" id="lupa">
+        </div>
+        <div class="icons">
+            <a href="#"><img src="~/images/shopping-cart.png" alt="carrinho"></a>
+            <a href="#"><img src="~/images/heart.png" alt="favoritos"></a>
+            <img src="~/images/avatar.png" alt="usuario" id="usuario">
+        </div>
+        <nav>
+            <a href="#">novidades</a>
+            <a href="#">masculino</a>
+            <a href="#">feminino</a>
+            <a href="#">infantil</a>
+            <a href="#">calçados</a>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <div class="cadastro" id="cadastro">
+            <img src="~/images/015-close.png" alt="fechar" id="fechar">
+            <h3>Cadastro</h3>
+            <p>E-mail</p>
+            <p><input type="email" name="e-mail" id="e-mail" placeholder="Digite seu email" required></p>
+            <p>Senha</p>
+            <p><input type="password" name="senha" id="senha" placeholder="Digite sua senha" required></p>
+            <p><input type="submit" value="entrar" id="login" class="button"></p>
+            <p>Não tem uma conta? </p>
+            <p><input type="button" value="Cadastrar" id="cadastroBtn" class="button"></p>
+        </div>
+
+        <div id="newUser">
+            <img src="~/images/left-arrow-key-1.png" alt="voltar" id="voltar">
+            <h3>Novo usuário</h3>
+            <p>Nome*</p>
+            <p><input type="text" name="nome" id="nome" placeholder="Digite seu nome" required></p>
+            <p>E-mail*</p>
+            <p><input type="email" name="E-mail" id="E-mail" placeholder="Digite seu e-mail" required></p>
+            <p>Senha*</p>
+            <p><input type="password" name="senha" id="Senha" placeholder="Digite sua senha" required></p>
+            <p>nascimento*</p>
+            <p><input type="date" name="nascimento" id="nascimento" required></p>
+            <p>Telefone*</p>
+            <p><input type="tel" name="telefone" id="telefone" placeholder="Digite seu número" required></p>
+            <p><input type="submit" value="Confirmar" id="confirmar"></p>
+        </div>
+
+        <main role="main" class="pb-3">     
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <div id="novidades">
+            <label for="novidades">Receba Novidades</label>
+            <select name="interesse" id="interesse">
+                <option value="">interesse</option>
+                <option value="novidades">novidades</option>
+                <option value="masculino">masculino</option>
+                <option value="feminino">feminino</option>
+                <option value="infantil">infantil</option>
+                <option value="calçados">calçados</option>
+            </select>
+            <input type="email" name="email" id="email" placeholder="Digite seu email">
+            <input type="submit" value="enviar" id="submit">
+        </div>
+        <div id="social-media">
+            <h3>Siga a xxxx</h3>
+            <img src="~/images/001-facebook.png" alt="facebook">
+            <img src="~/images/013-twitter.png" alt="twitter">
+            <img src="~/images/011-instagram.png" alt="instagram">
+            <img src="~/images/010-linkedin.png" alt="linkedIn">
+        </div>
+        <p id="fale-conosco">Fale conosco</p>
+        <p id="contato">contato@gmail.com</p>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="~/css/Produtos.css">
+<button id="filtrar">Filtrar</button>
+<nav id="filtro">
+    <button id="Novidades" value="N">novidades</button>
+    <button id="masculino">masculino</button>
+    <button id="feminino">feminino</button>
+    <button id="infantil">infantil</button>
+    <button id="calcados">calçados</button>
+</nav>
+<div class="Produtos">
+    @await Html.PartialAsync("_Produto")
+    @await Html.PartialAsync("_Produto")
+    @await Html.PartialAsync("_ProdutoPromo")
+    @await Html.PartialAsync("_ProdutoPromo")
+    @await Html.PartialAsync("_ProdutoPromo")
+    @await Html.PartialAsync("_ProdutoPromo")
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/Produtos.js"></script>
