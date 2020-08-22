@@ -15,14 +15,29 @@ namespace exercicio_3_Alex_Ferreira_Santos.Controllers
         {
             return View();
         }
+
         public IActionResult Produto(){
             return PartialView("_Produto");
         }
+
         public IActionResult ProdutoPromo(){
             return PartialView("_ProdutoPromo");
         }
+
         public IActionResult Produtos(){
             return View();
+        }
+
+        public IActionResult Curtidos(){
+            return View();
+        }
+
+        public IActionResult Carrinho(){
+            return View();
+        }
+
+        public IActionResult ProdutoCart(){
+            return PartialView("_ProdutoCart");
         }
     }
 }

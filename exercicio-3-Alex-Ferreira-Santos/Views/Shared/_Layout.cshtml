@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Moda</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site2.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <a href="#"><h3 id="logo">Logo</h3></a>
+        <a asp-action="Index"><h3 id="logo">Logo</h3></a>
         <div id="search-bar">
             <input type="text" name="pesquisa" id="pesquisa" placeholder="pesquisar...">
             <img src="~/images/magnifying-glass.png" alt="pesquisa" id="lupa">
         </div>
         <div class="icons">
-            <a href="#"><img src="~/images/shopping-cart.png" alt="carrinho"></a>
-            <a href="#"><img src="~/images/heart.png" alt="favoritos"></a>
+            <a asp-action="Carrinho"><img src="~/images/shopping-cart.png" alt="carrinho"></a>
+            <a asp-action="Curtidos"><img src="~/images/heart.png" alt="favoritos"></a>
             <img src="~/images/avatar.png" alt="usuario" id="usuario">
         </div>
         <nav>

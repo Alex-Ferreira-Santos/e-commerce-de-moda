@@ -40,3 +40,4 @@ C:\Users\Casa\OneDrive\Documents\curso senac\UC-2\exercicio-3-Alex-Ferreira-Sant
 C:\Users\Casa\OneDrive\Documents\curso senac\UC-2\exercicio-3-Alex-Ferreira-Santos\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Produto.cshtml.g.cs
 C:\Users\Casa\OneDrive\Documents\curso senac\UC-2\exercicio-3-Alex-Ferreira-Santos\bin\Debug\netcoreapp3.1\package-lock.json
 C:\Users\Casa\OneDrive\Documents\curso senac\UC-2\exercicio-3-Alex-Ferreira-Santos\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProdutoPromo.cshtml.g.cs
+C:\Users\Casa\OneDrive\Documents\curso senac\UC-2\exercicio-3-Alex-Ferreira-Santos\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProdutoCart.cshtml.g.cs

@@ -1,7 +1,13 @@
-<link rel="stylesheet" href="carinho.css">
-<h2>Curtidos <img src="~/images/favorite-heart-button.png" alt="curtidos"></h2>
-<div class="curtidos">
-    @await Html.PartialAsync("_ProdutoPromo")
-    @await Html.PartialAsync("_ProdutoPromo")
-    @await Html.PartialAsync("_Produto")
+<link rel="stylesheet" href="~/css/carrinho.css">
+<aside>
+    <h2 id="carrinho">Carrinho <img src="../images/shopping-cart-black.png" alt="carrinho" id="black-cart"></h2>
+    <p id="preco">Preço total: <br> R$<strong>00,00</strong></p> 
+    <button>Confirmar Compra</button>
+</aside>
+<div id="adicionados">
+    @await Html.PartialAsync("_ProdutoCart")
+    @await Html.PartialAsync("_ProdutoCart")
+    @await Html.PartialAsync("_ProdutoCart")
 </div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/carrinho.js"></script>

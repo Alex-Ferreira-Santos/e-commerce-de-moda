@@ -48,7 +48,7 @@ img{
     top: 2em;
 }
 #carrinho:hover{
-    background-image: url("../images/shopping-cart\ \(2\).png");
+    background-image: url("../images/shopping-cart-black.png");
 }
 .produto p{
     text-align: center;
