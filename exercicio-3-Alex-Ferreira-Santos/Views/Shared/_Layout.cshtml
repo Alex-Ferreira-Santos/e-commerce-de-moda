@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model usuario
+@using Microsoft.AspNetCore.Http
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -16,48 +18,64 @@
             <img src="~/images/magnifying-glass.png" alt="pesquisa" id="lupa">
         </div>
         <div class="icons">
-            <a asp-action="Carrinho"><img src="~/images/shopping-cart.png" alt="carrinho"></a>
-            <a asp-action="Curtidos"><img src="~/images/heart.png" alt="favoritos"></a>
-            <img src="~/images/avatar.png" alt="usuario" id="usuario">
+            <a asp-action="Carrinho" id="car"><img src="~/images/shopping-cart.png" alt="carrinho"></a>
+            <a asp-action="Curtidos" id="cur"><img src="~/images/heart.png" alt="favoritos"></a>
+            @if(Context.Session.GetInt32("idUsuariousuario")==null){<img src="~/images/avatar.png" alt="usuario" id="usuario">}
+            else{<a asp-action="Logout"><img src="~/images/logout.png" alt="logout" id="logout"></a> }   
         </div>
         <nav>
-            <a href="#">novidades</a>
-            <a href="#">masculino</a>
-            <a href="#">feminino</a>
-            <a href="#">infantil</a>
-            <a href="#">calçados</a>
+            <a href="~/Home/Produtos">novidades</a>
+            <a href="~/Home/Produtos">masculino</a>
+            <a href="~/Home/Produtos">feminino</a>
+            <a href="~/Home/Produtos">infantil</a>
+            <a href="~/Home/Produtos">calçados</a>
+            @if(Context.Session.GetInt32("tipoUsuariousuario")==1){<a asp-action="menu" asp-controller="Produto">menu</a>}
         </nav>
+        @if(Context.Session.GetInt32("idUsuariousuario")!=null){<span id="Logout">Olá <b>@Context.Session.GetString("nomeUsuariousuario")</b></span>}
     </header>
 
     <div class="container">
-
-        <div class="cadastro" id="cadastro">
+        <form method="POST" class="cadastro" id="cadastro">
             <img src="~/images/015-close.png" alt="fechar" id="fechar">
             <h3>Cadastro</h3>
-            <p>E-mail</p>
-            <p><input type="email" name="e-mail" id="e-mail" placeholder="Digite seu email" required></p>
-            <p>Senha</p>
-            <p><input type="password" name="senha" id="senha" placeholder="Digite sua senha" required></p>
-            <p><input type="submit" value="entrar" id="login" class="button"></p>
-            <p>Não tem uma conta? </p>
-            <p><input type="button" value="Cadastrar" id="cadastroBtn" class="button"></p>
-        </div>
 
-        <div id="newUser">
+            <p><label asp-for="email">E-mail</label></p>
+            <p><input asp-for="email" type="email" id="e-mail" placeholder="Digite seu email" required></p>
+
+            <p><label asp-for="senha">Senha</label></p>
+            <p><input asp-for="senha" type="password" id="senha" placeholder="Digite sua senha" required></p>
+
+            <p><input type="submit" name="login" value="entrar" id="login" class="button"></p>
+
+            <p>Não tem uma conta? </p>
+
+            <p><input type="button" value="Cadastrar" id="cadastroBtn" class="button"></p>
+        </form>
+
+        <form method="POST" id="newUser">
             <img src="~/images/left-arrow-key-1.png" alt="voltar" id="voltar">
             <h3>Novo usuário</h3>
-            <p>Nome*</p>
-            <p><input type="text" name="nome" id="nome" placeholder="Digite seu nome" required></p>
-            <p>E-mail*</p>
-            <p><input type="email" name="E-mail" id="E-mail" placeholder="Digite seu e-mail" required></p>
-            <p>Senha*</p>
-            <p><input type="password" name="senha" id="Senha" placeholder="Digite sua senha" required></p>
-            <p>nascimento*</p>
-            <p><input type="date" name="nascimento" id="nascimento" required></p>
-            <p>Telefone*</p>
-            <p><input type="tel" name="telefone" id="telefone" placeholder="Digite seu número" required></p>
-            <p><input type="submit" value="Confirmar" id="confirmar"></p>
-        </div>
+
+            <p><label asp-for="nome">Nome*</label></p>
+            <p><input asp-for="nome" name="nome" id="nome" placeholder="Digite seu nome" required></p>
+
+            <p><label asp-for="email">E-mail*</label></p>
+            <p><input asp-for="email" type="email" name="email" id="E-mail" placeholder="Digite seu email" required></p>
+
+            <p><label asp-for="senha">Senha*</label></p>
+            <p><input type="password" asp-for="senha" name="senha" id="Senha" placeholder="Digite sua senha" required></p>
+
+            <p><label asp-for="nascimento">nascimento*</label></p>
+            <p><input type="date" asp-for="nascimento" name="nascimento" id="nascimento" required></p>
+
+            <p><label asp-for="telefone"> Telefone*</label></p>
+            <p><input asp-for="telefone" name="telefone" id="telefone" placeholder="Digite seu número" required></p>
+
+            <p><input type="submit" name="login" value="Confirmar" id="confirmar"></p>
+        </form>
+
+        <p id="viewBag">@ViewBag.mensagem</p>
+            
 
         <main role="main" class="pb-3">     
             @RenderBody()

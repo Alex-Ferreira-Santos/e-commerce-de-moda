@@ -1,0 +1,12 @@
+@{
+    ViewData["Title"] = "Menu";
+}
+<link rel="stylesheet" href="~/css/menu.css">
+<menu>
+    <h2>Selecione as opções</h2>
+    <a asp-action="Inserir" asp-controller="Produto"><button>Adicionar produto</button></a>
+    <a asp-action="Modificar" asp-controller="Produto"><button>Modificar produto</button></a>
+    <a asp-action="Deletar" asp-controller="Produto"><button>Excluir produto</button></a>
+    <a asp-action="Alterar" asp-controller="Usuario"><button>Modificar usuario</button></a>
+    <a asp-action="Excluir" asp-controller="Usuario"><button>Excluir produto</button></a>
+</menu>

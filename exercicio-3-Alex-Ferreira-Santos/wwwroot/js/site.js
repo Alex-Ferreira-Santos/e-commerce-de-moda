@@ -52,5 +52,12 @@ $("#voltar").on("click", function(){
     $("#newUser").css({display:"none"})
     $("#cadastro").css({display:"initial"})
 })
+$("#cur").on("click",function(){
+    alert("Faça login para acessar os produtos curtidos")
+})
+$("#car").on("click",function(){
+    alert("Faça login para acessar o carrinho")
+})
+
 
 
