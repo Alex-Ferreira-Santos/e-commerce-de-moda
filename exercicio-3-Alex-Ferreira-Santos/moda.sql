@@ -25,4 +25,4 @@ constraint fk_idUsuario foreign key (idUsuario) references usuario(idUsuario)
 
 
 
-insert into usuario(nomeUsuario,emailUsuario,senhaUsuario,nascimentoUsuario,telefoneUsuario,tipoUsuario) values ("adm","a@mail.com","1234","01/01/0001","12345678","1")
+insert into usuario(nomeUsuario,emailUsuario,senhaUsuario,nascimentoUsuario,telefoneUsuario,tipoUsuario) values ("adm","a@mail.com","1234","01-01-0001","12345678","1")

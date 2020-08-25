@@ -52,9 +52,10 @@ namespace exercicio_3_Alex_Ferreira_Santos.Models
         }
         public void updateAdm(usuario u){
             conexao.Open();
-            string sql="UPDATE usuario SET emailUsuario=@email,tipoUsuario=@tipo WHERE idUsuario=@id";
+            string sql="UPDATE usuario SET tipoUsuario=@tipo WHERE idUsuario=@id AND emailUsuario=@email AND nomeUsuario=@nome";
             MySqlCommand comando = new MySqlCommand(sql,conexao);
             comando.Parameters.AddWithValue("@id",u.id);
+            comando.Parameters.AddWithValue("@nome",u.nome);
             comando.Parameters.AddWithValue("@email",u.email);
             comando.Parameters.AddWithValue("@tipo",u.tipo);
             comando.ExecuteNonQuery();
@@ -62,9 +63,11 @@ namespace exercicio_3_Alex_Ferreira_Santos.Models
         }
         public void delete(usuario u){
             conexao.Open();
-            string sql="DELETE FROM usuario WHERE idUsuario=@id and emailUsuario=@email and senhaUsuario=@senha";
+            string sql="DELETE FROM usuario WHERE idUsuario=@id and emailUsuario=@email and senhaUsuario=@senha and nascimentoUsuario=@nascimento and telefoneUsuario=@telefone";
             MySqlCommand comando = new MySqlCommand(sql,conexao);
             comando.Parameters.AddWithValue("@id", u.id);
+            comando.Parameters.AddWithValue("@nascimento",u.nascimento);
+            comando.Parameters.AddWithValue("@telefone",u.telefone);
             comando.Parameters.AddWithValue("@email",u.email);
             comando.Parameters.AddWithValue("@senha",u.senha);
             comando.ExecuteNonQuery();

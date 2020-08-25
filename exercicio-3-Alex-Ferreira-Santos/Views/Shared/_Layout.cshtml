@@ -12,16 +12,16 @@
 </head>
 <body>
     <header>
-        <a asp-action="Index"><h3 id="logo">Logo</h3></a>
+        <a asp-action="Index" asp-controller="Home"><h3 id="logo">Logo</h3></a>
         <div id="search-bar">
             <input type="text" name="pesquisa" id="pesquisa" placeholder="pesquisar...">
             <img src="~/images/magnifying-glass.png" alt="pesquisa" id="lupa">
         </div>
         <div class="icons">
-            <a asp-action="Carrinho" id="car"><img src="~/images/shopping-cart.png" alt="carrinho"></a>
-            <a asp-action="Curtidos" id="cur"><img src="~/images/heart.png" alt="favoritos"></a>
+            <a asp-action="Carrinho" asp-controller="Home" id="car"><img src="~/images/shopping-cart.png" alt="carrinho"></a>
+            <a asp-action="Curtidos" asp-controller="Home" id="cur"><img src="~/images/heart.png" alt="favoritos"></a>
             @if(Context.Session.GetInt32("idUsuariousuario")==null){<img src="~/images/avatar.png" alt="usuario" id="usuario">}
-            else{<a asp-action="Logout"><img src="~/images/logout.png" alt="logout" id="logout"></a> }   
+            else{<a asp-action="Logout" asp-controller="Home"><img src="~/images/logout.png" alt="logout" id="logout"></a> }   
         </div>
         <nav>
             <a href="~/Home/Produtos">novidades</a>
@@ -29,7 +29,7 @@
             <a href="~/Home/Produtos">feminino</a>
             <a href="~/Home/Produtos">infantil</a>
             <a href="~/Home/Produtos">calçados</a>
-            @if(Context.Session.GetInt32("tipoUsuariousuario")==1){<a asp-action="menu" asp-controller="Produto">menu</a>}
+            @if(Context.Session.GetInt32("tipoUsuariousuario")!=null){<a asp-action="menu" asp-controller="Produto">menu</a>}
         </nav>
         @if(Context.Session.GetInt32("idUsuariousuario")!=null){<span id="Logout">Olá <b>@Context.Session.GetString("nomeUsuariousuario")</b></span>}
     </header>

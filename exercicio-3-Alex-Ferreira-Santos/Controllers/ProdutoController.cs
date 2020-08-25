@@ -12,7 +12,7 @@ namespace exercicio_3_Alex_Ferreira_Santos.Controllers
     public class ProdutoController : Controller
     {
         public IActionResult Menu(){
-            if(HttpContext.Session.GetInt32("tipoUsuariousuario")!=1){
+            if(HttpContext.Session.GetInt32("tipoUsuariousuario")==null){
                 return RedirectToAction("Index","Home");
             }
             return View();

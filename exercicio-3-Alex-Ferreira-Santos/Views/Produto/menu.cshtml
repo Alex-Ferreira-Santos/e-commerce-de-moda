@@ -1,12 +1,18 @@
+@using Microsoft.AspNetCore.Http
 @{
     ViewData["Title"] = "Menu";
 }
-<link rel="stylesheet" href="~/css/menu.css">
+<link rel="stylesheet" href="~/css/menu2.css">
 <menu>
     <h2>Selecione as opções</h2>
-    <a asp-action="Inserir" asp-controller="Produto"><button>Adicionar produto</button></a>
-    <a asp-action="Modificar" asp-controller="Produto"><button>Modificar produto</button></a>
-    <a asp-action="Deletar" asp-controller="Produto"><button>Excluir produto</button></a>
-    <a asp-action="Alterar" asp-controller="Usuario"><button>Modificar usuario</button></a>
-    <a asp-action="Excluir" asp-controller="Usuario"><button>Excluir produto</button></a>
+    @if(Context.Session.GetInt32("tipoUsuariousuario")==0){
+        <p><a asp-action="Modificar" asp-controller="Usuario"><button>Modificar usuário</button></a></p>
+        <p><a asp-action="Excluir" asp-controller="Usuario"><button>Excluir usuário</button></a></p>
+    }
+    @if(Context.Session.GetInt32("tipoUsuariousuario")==1){
+        <p><a asp-action="Modificar" asp-controller="Usuario"><button>Modificar usuário</button></a></p>
+        <p><a asp-action="Inserir" asp-controller="Produto"><button>Adicionar produto</button></a></p>
+        <p><a asp-action="Modificar" asp-controller="Produto"><button>Modificar produto</button></a></p>
+        <p><a asp-action="Deletar" asp-controller="Produto"><button>Excluir produto</button></a></p>
+    }
 </menu>
