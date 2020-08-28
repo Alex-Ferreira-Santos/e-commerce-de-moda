@@ -14,46 +14,60 @@ namespace exercicio_3_Alex_Ferreira_Santos.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            ViewModel viewModel = new ViewModel();
+            viewModel.ProdutoRepository = new ProdutoRepository();
+            viewModel.listaProduto = viewModel.ProdutoRepository.promocao();
+            viewModel.listaProd = viewModel.ProdutoRepository.novo();
+            return View(viewModel);
         }
         [HttpPost]
-        public IActionResult Index(string login,usuario u) {
+        public IActionResult Index(string login,ViewModel u) {  
             switch(login) {
                 case "entrar":
-                    // delegate sending to another controller action
+                    
                     return(Entrar(u));
                 case "Confirmar":
-                    // call another action to perform the cancellation
+                    
                     return(Cadastrar(u));
                 default:
-                    // If they've submitted the form without a submitButton, 
-                    // just return the view again.
+                    
                     return(View());
             }
         }   
     
 
-        private IActionResult Cadastrar(usuario u) {
-            usuarioRepository ur = new usuarioRepository();
-            u.tipo=0;
-            ur.insert(u);
-            ViewBag.mensagem=$"Usuario {u.nome} criado com sucesso";
-            return(View("Index"));
+        private IActionResult Cadastrar(ViewModel u) {
+            ViewModel viewModel = new ViewModel();
+            viewModel.UsuarioRepository = new usuarioRepository();
+            viewModel.UsuarioRepository.insert(u.usuario);
+
+            viewModel.ProdutoRepository = new ProdutoRepository();
+            viewModel.listaProduto = viewModel.ProdutoRepository.promocao();
+            viewModel.listaProd = viewModel.ProdutoRepository.novo();
+
+            ViewBag.mensagem=$"Usuario {u.usuario.nome} criado com sucesso";
+            return(View("Index",viewModel));
         }
 
-        private IActionResult Entrar(usuario u) {
-            usuarioRepository ur = new usuarioRepository();
-            usuario Usuario = ur.login(u);
-            if(Usuario!=null)
+        private IActionResult Entrar(ViewModel u) {
+            ViewModel viewModel = new ViewModel();
+            viewModel.UsuarioRepository = new usuarioRepository();
+            viewModel.usuario = viewModel.UsuarioRepository.login(u.usuario);
+
+            viewModel.ProdutoRepository = new ProdutoRepository();
+            viewModel.listaProduto = viewModel.ProdutoRepository.promocao();
+            viewModel.listaProd = viewModel.ProdutoRepository.novo();
+
+            if(viewModel.usuario!=null)
             {
-                HttpContext.Session.SetInt32("idUsuariousuario",Usuario.id);
-                HttpContext.Session.SetString("nomeUsuariousuario",Usuario.nome);
-                HttpContext.Session.SetInt32("tipoUsuariousuario",Usuario.tipo);
-                return(View("Index"));
+                HttpContext.Session.SetInt32("idUsuariousuario",viewModel.usuario.id);
+                HttpContext.Session.SetString("nomeUsuariousuario",viewModel.usuario.nome);
+                HttpContext.Session.SetInt32("tipoUsuariousuario",viewModel.usuario.tipo);
+                return(View("Index",viewModel));
             }
             else{
                 ViewBag.mensagem=$" falha no login";
-                return(View("Index"));
+                return(View("Index",viewModel));
             }             
         } 
         public IActionResult Logout()
@@ -61,35 +75,18 @@ namespace exercicio_3_Alex_Ferreira_Santos.Controllers
             HttpContext.Session.Clear();
             return RedirectToAction("Index","Home");
         }
-
-        public IActionResult Produto(){
-            if(HttpContext.Session.GetInt32("tipoUsuario")!=1){
-                return RedirectToAction("Index","Home");
-            }
-            return PartialView("_Produto");
-        }
-
-        public IActionResult ProdutoPromo(){
-            if(HttpContext.Session.GetInt32("tipoUsuario")!=1){
-                return RedirectToAction("Index","Home");
-            }
-            return PartialView("_ProdutoPromo");
-        }
-
-        public IActionResult Produtos(){
-            return View();
-        }
-
         public IActionResult Curtidos(){
-            if(HttpContext.Session.GetInt32("tipoUsuario")==null){
+            if(HttpContext.Session.GetInt32("tipoUsuariousuario")==null){
                 return RedirectToAction("Index","Home");
             }
-            return View();
-            
+            ViewModel viewModel = new ViewModel();
+            viewModel.CurtidosRepository = new CurtidosRepository();
+            viewModel.listaCurtidos= viewModel.CurtidosRepository.curtidos(int.Parse(HttpContext.Session.GetInt32("idUsuariousuario").ToString()));
+            return View(viewModel);
         }
 
         public IActionResult Carrinho(){
-            if(HttpContext.Session.GetInt32("tipoUsuario")==null){
+            if(HttpContext.Session.GetInt32("tipoUsuariousuario")==null){
                 return RedirectToAction("Index","Home");
             }
             return View();

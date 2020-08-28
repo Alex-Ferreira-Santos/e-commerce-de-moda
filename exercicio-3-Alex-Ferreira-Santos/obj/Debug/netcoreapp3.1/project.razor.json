@@ -14427,18 +14427,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Shared\\_ProdutoNovo.cshtml",
+      "TargetPath": "Views\\Shared\\_ProdutoNovo.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Produto\\menu.cshtml",
       "TargetPath": "Views\\Produto\\menu.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Home\\Curtidos.cshtml",
-      "TargetPath": "Views\\Home\\Curtidos.cshtml",
+      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Shared\\_ProdutoCurtido.cshtml",
+      "TargetPath": "Views\\Shared\\_ProdutoCurtido.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Home\\Produtos.cshtml",
-      "TargetPath": "Views\\Home\\Produtos.cshtml",
+      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Home\\Curtidos.cshtml",
+      "TargetPath": "Views\\Home\\Curtidos.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14459,6 +14464,11 @@
     {
       "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Produto\\Modificar.cshtml",
       "TargetPath": "Views\\Produto\\Modificar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Produto\\Produtos.cshtml",
+      "TargetPath": "Views\\Produto\\Produtos.cshtml",
       "FileKind": "mvc"
     },
     {

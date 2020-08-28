@@ -1,0 +1,26 @@
+@model ViewModel; 
+@{
+    ViewData["Title"] = "Produtos";
+}
+<link rel="stylesheet" href="~/css/_Produto.css">
+@foreach (Curtidos item in Model.listaCurtidos)
+{
+    <div class="produto">
+        <img src="@item.fotoProduto" alt="Produto">
+        <button alt="Curtir" class="icones curtir" id="curtir"></button>
+        <button alt="Carrinho" class="icones loja" id="carrinho"></button>
+        <p>@item.nomeProduto</p>
+        @if(item.promocaoProduto!=0){
+            <p>
+                <label for="preço antigo" id="antigo"><del>R$<strong>@item.precoProduto</strong></del></label>
+                <label for="preço atual" id="atual">R$@item.promocaoProduto</label>
+            </p>
+        }
+        @if(item.promocaoProduto==0){
+            <p>R$<strong>@item.precoProduto</strong></p>
+        }     
+        
+    </div>
+}
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/_Produto.js"></script>

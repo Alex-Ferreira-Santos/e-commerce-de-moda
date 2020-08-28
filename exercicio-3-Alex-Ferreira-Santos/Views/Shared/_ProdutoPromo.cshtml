@@ -1,13 +1,18 @@
-<link rel="stylesheet" href="~/css/_Produto2.css">
-<div class="produto">
-    <img src="~/images/camisa1.png" alt="Produto">
-    <button alt="Curtir" class="icones curtir" id="curtir"></button>
-    <button alt="Carrinho" class="icones loja" id="carrinho"></button>
-    <p>Produto xxxxxxxxxx</p>
-    <p>
-        <label for="preço antigo" id="antigo"><del>R$<strong>100,00</strong></del></label>
-        <label for="preço atual" id="atual">R$50,00</label>
-    </p>
-</div>
+@model ViewModel;
+<link rel="stylesheet" href="~/css/_Produto.css">
+@foreach (Produto item in Model.listaProduto)
+{
+    <div class="produto">
+        <img src="@item.foto" alt="Produto">
+        <button alt="Curtir" class="icones curtir" id="curtir"></button>
+        <button alt="Carrinho" class="icones loja" id="carrinho"></button>
+        <p>@item.nome</p>
+        <p>
+            <label for="preço antigo" id="antigo"><del>R$<strong>@item.preco</strong></del></label>
+            <label for="preço atual" id="atual">R$@item.promocao</label>
+        </p>
+    </div>
+}
+
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/js/_Produto.js"></script>

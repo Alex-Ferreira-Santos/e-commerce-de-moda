@@ -1,13 +1,22 @@
+*{
+    z-index: 0;
+}
+header{
+    z-index: 11;
+}
 nav{
+    z-index: 11;
     display: none;
 }
 main{
-    padding-top: 8em;
+    padding-top: 10em;
 }
 .Produtos{
     text-align: center;
 }
 #filtrar{
+    cursor: pointer;
+    text-align-last: center;
     outline: none;
     color: white;
     width: 100vw;  
@@ -16,55 +25,27 @@ main{
     display: block;
     z-index: 1;
     position: fixed;
-    top: 5.2em;
+    top: 6.7em;
     left: 0;
-}
-#filtro{
-    cursor: pointer;
-    left: 0;
-    width: 100vw;
-    display: block;
-    top: 6.8em;
-    z-index: 1;
-    position: fixed;
-    display: initial;
-    background: rgb(85, 85, 85);
-    opacity: 0;
-    transform: translate3d(0, -25px, 0);
-    transition: transform .3s cubic-bezier(0, .52, 0, 1);
-}
-#filtro.show{
-    cursor:auto;
-    opacity: 1;
-    transform: translate3d(0, 0px, 0);
-}
-#filtro button{
-    outline: none;
-    padding: 0;
-    cursor: pointer;
-    margin: 0;
-    margin-right: 2.5vw;
-    color: rgb(184, 181, 181);
-    border: none;
-    background: none;
-}
-#filtro button.on{
-    color: white;
 }
 @media(min-width:820px){
     header{
-        height: 9vh;
+        height: 10vh;
+    }
+    main{
+        padding-top: 8em;
     }
     #logo{
         margin: 0.5em;
     }
     #filtrar{
-        top: 3.6em;
+        top: 4em;
     }
     #filtro{
-        transform: translate3d(0, -50px, 0);
+        top: 6.8em;
+        transform: translate3d(0, -30px, 0);
     }
     #filtro.show{
-        transform: translate3d(0, -25px, 0);
+        transform: translate3d(0, -20px, 0);
     }
 }

@@ -1,25 +1,10 @@
-var a = 0
-function ClasseOn(element){
-    $(`${element}`).on("click",function(){
-        if(a%2===0){
-            $(this).addClass("on")
-            a++
-        }
-        else{
-            $(this).removeClass("on")
-            a++
-        }
-    })
-    
-}
-$("#filtro").on("click",function(){
-    $(this).addClass("show")
-})
-$("#filtrar").on("click",function(){
-    $("#filtro").removeClass("show")
-})
-ClasseOn("#Novidades")
-ClasseOn("#masculino")
-ClasseOn("#feminino")
-ClasseOn("#infantil")
-ClasseOn("#calcados")
+$("#filtrar").on("change",function () {
+    var ordem = document.getElementById("filtrar").value;
+    $.get("/Produto/_Produto?categoria=" + ordem)
+        .done(function (data) { 
+            $(".Produtos").html(data);
+        })
+        .fail(function () { 
+            alert("Falha ao concluir requisição. ");
+        });
+}) ;

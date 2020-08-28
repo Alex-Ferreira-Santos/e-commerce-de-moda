@@ -6,8 +6,8 @@
 <menu>
     <h2>Selecione as opções</h2>
     @if(Context.Session.GetInt32("tipoUsuariousuario")==0){
-        <p><a asp-action="Modificar" asp-controller="Usuario"><button>Modificar usuário</button></a></p>
-        <p><a asp-action="Excluir" asp-controller="Usuario"><button>Excluir usuário</button></a></p>
+        <p><a asp-action="Modificar" asp-controller="Usuario"><button>Modificar conta</button></a></p>
+        <p><a asp-action="Excluir" asp-controller="Usuario"><button>Excluir conta</button></a></p>
     }
     @if(Context.Session.GetInt32("tipoUsuariousuario")==1){
         <p><a asp-action="Modificar" asp-controller="Usuario"><button>Modificar usuário</button></a></p>

@@ -4,15 +4,11 @@
 <link rel="stylesheet" href="~/css/index.css">
 <h2 id="destaque" class="text-center">Destaque</h2>
 <div class="destaque">
-    @await Html.PartialAsync("_Produto")
-    @await Html.PartialAsync("_Produto")
-    @await Html.PartialAsync("_Produto")
+    @await Html.PartialAsync("_ProdutoNovo")
 </div>
 <h2 class="text-center">Promoções</h2>
 <div id="promocoes">
     @await Html.PartialAsync("_ProdutoPromo")
-    @await Html.PartialAsync("_ProdutoPromo")
-    @await Html.PartialAsync("_ProdutoPromo")
 </div>
 <h2 class="text-center">Confira Nossos Produtos</h2>
-<a asp-action="Produtos"><button id="Conferir">Conferir</button></a>
+<a asp-action="Produtos" asp-controller="Produto"><button id="Conferir">Conferir</button></a>

@@ -1,0 +1,56 @@
+form{
+    margin: auto;
+    margin-top: 5em;
+    text-align: center;
+    text-align-last: center;
+    background-color: rgb(215, 161, 228);
+    width: 60vw;
+    color: white;
+    border-radius: 15px;
+}
+h2{
+    border-radius: 15px 15px 0 0;
+    background-color: rgba(77, 0, 128, 0.685);
+}
+p{
+    font-size: 20px;
+    line-height: 0.7em;
+}
+form input,form select{
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    
+}
+.text-box{
+    width: 50vw;
+}
+#Excluir{
+    width: 30vw;
+    margin-bottom: 1em;
+    line-height: normal;
+    background-color: greenyellow;
+}
+#Excluir:hover{
+    background-color: rgb(140, 206, 41);
+}
+@media(min-width:800px){
+    form{
+        margin-top: 2em;
+        width: 40vw;
+    }
+    p{
+        line-height: normal;
+    }
+    .text-box{
+        width: 30vw;
+    }
+    #Excluir{
+        width: 20vw;
+        margin-bottom: 1em;
+        background-color: greenyellow;
+    }
+    #Excluir:hover{
+        background-color: rgb(140, 206, 41);
+    }
+}

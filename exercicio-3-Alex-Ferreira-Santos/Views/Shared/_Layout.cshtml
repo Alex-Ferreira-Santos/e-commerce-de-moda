@@ -1,4 +1,4 @@
-﻿@model usuario
+﻿@model ViewModel
 @using Microsoft.AspNetCore.Http
 <!DOCTYPE html>
 <html lang="en">
@@ -18,17 +18,22 @@
             <img src="~/images/magnifying-glass.png" alt="pesquisa" id="lupa">
         </div>
         <div class="icons">
-            <a asp-action="Carrinho" asp-controller="Home" id="car"><img src="~/images/shopping-cart.png" alt="carrinho"></a>
-            <a asp-action="Curtidos" asp-controller="Home" id="cur"><img src="~/images/heart.png" alt="favoritos"></a>
+            @if(Context.Session.GetInt32("idUsuariousuario")==null){
+                <a asp-action="Carrinho" asp-controller="Home" id="car"><img src="~/images/shopping-cart.png" alt="carrinho"></a>
+                <a asp-action="Curtidos" asp-controller="Home" id="cur"><img src="~/images/heart.png" alt="favoritos"></a>
+            }else{
+                <a asp-action="Carrinho" asp-controller="Home"><img src="~/images/shopping-cart.png" alt="carrinho"></a>
+                <a asp-action="Curtidos" asp-controller="Home"><img src="~/images/heart.png" alt="favoritos"></a>
+            }
             @if(Context.Session.GetInt32("idUsuariousuario")==null){<img src="~/images/avatar.png" alt="usuario" id="usuario">}
             else{<a asp-action="Logout" asp-controller="Home"><img src="~/images/logout.png" alt="logout" id="logout"></a> }   
         </div>
         <nav>
-            <a href="~/Home/Produtos">novidades</a>
-            <a href="~/Home/Produtos">masculino</a>
-            <a href="~/Home/Produtos">feminino</a>
-            <a href="~/Home/Produtos">infantil</a>
-            <a href="~/Home/Produtos">calçados</a>
+            <a href="~/produto/Produtos?categoria='novidade'">novidades</a>
+            <a href="~/produto/Produtos?categoria='masculino'">masculino</a>
+            <a href="~/produto/Produtos?categoria='feminino'">feminino</a>
+            <a href="~/produto/Produtos?categoria='infantil'">infantil</a>
+            <a href="~/produto/Produtos?categoria='calcados'">calçados</a>
             @if(Context.Session.GetInt32("tipoUsuariousuario")!=null){<a asp-action="menu" asp-controller="Produto">menu</a>}
         </nav>
         @if(Context.Session.GetInt32("idUsuariousuario")!=null){<span id="Logout">Olá <b>@Context.Session.GetString("nomeUsuariousuario")</b></span>}
@@ -39,11 +44,11 @@
             <img src="~/images/015-close.png" alt="fechar" id="fechar">
             <h3>Cadastro</h3>
 
-            <p><label asp-for="email">E-mail</label></p>
-            <p><input asp-for="email" type="email" id="e-mail" placeholder="Digite seu email" required></p>
+            <p><label asp-for="usuario.email">E-mail</label></p>
+            <p><input asp-for="usuario.email" type="email" id="e-mail" placeholder="Digite seu email" required></p>
 
-            <p><label asp-for="senha">Senha</label></p>
-            <p><input asp-for="senha" type="password" id="senha" placeholder="Digite sua senha" required></p>
+            <p><label asp-for="usuario.senha">Senha</label></p>
+            <p><input asp-for="usuario.senha" type="password" id="senha" placeholder="Digite sua senha" required></p>
 
             <p><input type="submit" name="login" value="entrar" id="login" class="button"></p>
 
@@ -56,20 +61,20 @@
             <img src="~/images/left-arrow-key-1.png" alt="voltar" id="voltar">
             <h3>Novo usuário</h3>
 
-            <p><label asp-for="nome">Nome*</label></p>
-            <p><input asp-for="nome" name="nome" id="nome" placeholder="Digite seu nome" required></p>
+            <p><label asp-for="usuario.nome">Nome*</label></p>
+            <p><input asp-for="usuario.nome" placeholder="Digite seu nome" required></p>
 
-            <p><label asp-for="email">E-mail*</label></p>
-            <p><input asp-for="email" type="email" name="email" id="E-mail" placeholder="Digite seu email" required></p>
+            <p><label asp-for="usuario.email">E-mail*</label></p>
+            <p><input asp-for="usuario.email" placeholder="Digite seu email" required></p>
 
-            <p><label asp-for="senha">Senha*</label></p>
-            <p><input type="password" asp-for="senha" name="senha" id="Senha" placeholder="Digite sua senha" required></p>
+            <p><label asp-for="usuario.senha">Senha*</label></p>
+            <p><input asp-for="usuario.senha" type="password" placeholder="Digite sua senha" required></p>
 
-            <p><label asp-for="nascimento">nascimento*</label></p>
-            <p><input type="date" asp-for="nascimento" name="nascimento" id="nascimento" required></p>
+            <p><label asp-for="usuario.nascimento">nascimento*</label></p>
+            <p><input asp-for="usuario.nascimento" type="date" required></p>
 
-            <p><label asp-for="telefone"> Telefone*</label></p>
-            <p><input asp-for="telefone" name="telefone" id="telefone" placeholder="Digite seu número" required></p>
+            <p><label asp-for="usuario.telefone"> Telefone*</label></p>
+            <p><input asp-for="usuario.telefone" placeholder="Digite seu número" required></p>
 
             <p><input type="submit" name="login" value="Confirmar" id="confirmar"></p>
         </form>
@@ -108,6 +113,7 @@
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
