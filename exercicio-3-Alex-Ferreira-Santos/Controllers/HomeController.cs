@@ -84,12 +84,31 @@ namespace exercicio_3_Alex_Ferreira_Santos.Controllers
             viewModel.listaCurtidos= viewModel.CurtidosRepository.curtidos(int.Parse(HttpContext.Session.GetInt32("idUsuariousuario").ToString()));
             return View(viewModel);
         }
+        [HttpPost]
+        public IActionResult Curtidos(Curtidos c){
+            ViewModel viewModel = new ViewModel();
+            viewModel.CurtidosRepository = new CurtidosRepository();
+            viewModel.CurtidosRepository.insert(c,HttpContext.Session.GetInt32("idUsuariousuario"));
+            viewModel.listaCurtidos= viewModel.CurtidosRepository.curtidos(int.Parse(HttpContext.Session.GetInt32("idUsuariousuario").ToString()));
+            return PartialView("_ProdutoCurtido",viewModel);
+        }
 
         public IActionResult Carrinho(){
             if(HttpContext.Session.GetInt32("tipoUsuariousuario")==null){
                 return RedirectToAction("Index","Home");
             }
-            return View();
+            ViewModel viewModel = new ViewModel();
+            viewModel.CarrinhoRepository = new CarrinhoRepository();
+            viewModel.listaCarrinho= viewModel.CarrinhoRepository.carrinho(HttpContext.Session.GetInt32("idUsuariousuario"));
+            return View(viewModel);
+        }
+        [HttpPost]
+        public IActionResult Carrinho(Carrinho c){
+            ViewModel viewModel = new ViewModel();
+            viewModel.CarrinhoRepository = new CarrinhoRepository();
+            viewModel.CarrinhoRepository.insert(c,HttpContext.Session.GetInt32("idUsuariousuario"));
+            viewModel.listaCarrinho= viewModel.CarrinhoRepository.carrinho(HttpContext.Session.GetInt32("idUsuariousuario"));
+            return PartialView("_ProdutoCart",viewModel);
         }
 
         public IActionResult ProdutoCart(){
@@ -98,5 +117,6 @@ namespace exercicio_3_Alex_Ferreira_Santos.Controllers
             }
             return PartialView("_ProdutoCart");
         }
+
     }
 }

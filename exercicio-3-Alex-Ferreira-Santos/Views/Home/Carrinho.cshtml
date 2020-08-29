@@ -1,15 +1,13 @@
 @{
     ViewData["Title"] = "Carrinho";
 }
-<link rel="stylesheet" href="~/css/carrinho.css">
+<link rel="stylesheet" href="~/css/carrinho2.css">
 <aside>
     <h2 id="carrinho">Carrinho <img src="../images/shopping-cart-black.png" alt="carrinho" id="black-cart"></h2>
     <p id="preco">Preço total: <br> R$<strong>00,00</strong></p> 
     <button>Confirmar Compra</button>
 </aside>
-<div id="adicionados">
-    @await Html.PartialAsync("_ProdutoCart")
-    @await Html.PartialAsync("_ProdutoCart")
+<div class="adicionados">
     @await Html.PartialAsync("_ProdutoCart")
 </div>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>

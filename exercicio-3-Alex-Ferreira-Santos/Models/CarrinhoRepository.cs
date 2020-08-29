@@ -1,24 +1,23 @@
 using System;
 using System.Collections.Generic;
-using Microsoft.AspNetCore.Http;
 using MySqlConnector;
 
 namespace exercicio_3_Alex_Ferreira_Santos.Models
 {
-    public class CurtidosRepository : repository
+    public class CarrinhoRepository  : repository
     {
-        public List<Curtidos> curtidos(int id){
+        public List<Carrinho> carrinho(int? id){
             conexao.Open();
-            string sql=$"select * from produto inner join curtidos on produto.idProduto=curtidos.idProduto where idUsuario={id}";
+            string sql=$"select * from produto inner join carrinho on produto.idProduto=carrinho.idProdutos where idUsuarios={id}";
             MySqlCommand comando = new MySqlCommand(sql,conexao);
             MySqlDataReader reader = comando.ExecuteReader();
-            List<Curtidos> lista = new List<Curtidos>();
+            List<Carrinho> lista = new List<Carrinho>();
             while (reader.Read())
             {
-                Curtidos c =new Curtidos();
-                c.idUsuario=id;
-                c.idCurtidos=reader.GetInt32("idCurtido");
-                c.idProduto=reader.GetInt32("idProduto");
+                Carrinho c =new Carrinho();
+                c.idUsuarios=id;
+                c.idCarrinho=reader.GetInt32("idCarrinho");
+                c.idProdutos=reader.GetInt32("idProdutos");
                 c.nomeProduto=reader.IsDBNull(reader.GetOrdinal("nomeProduto"))?null:reader.GetString("nomeProduto");
                 c.fotoProduto=reader.IsDBNull(reader.GetOrdinal("fotoProduto"))?null:reader.GetString("fotoProduto");
                 c.categoriaProduto=reader.IsDBNull(reader.GetOrdinal("categoriaProduto"))?null:reader.GetString("categoriaProduto");
@@ -29,11 +28,11 @@ namespace exercicio_3_Alex_Ferreira_Santos.Models
             conexao.Close();
             return lista;
         }
-        public void insert(Curtidos c,int? id){
+        public void insert(Carrinho c,int? id){
             conexao.Open();
-            string sql="insert into curtidos(idProduto,idUsuario) values(@idProduto,@idUsuario)";
+            string sql="insert into carrinho(idProdutos,idUsuarios) values(@idProduto,@idUsuario)";
             MySqlCommand comando = new MySqlCommand(sql,conexao);
-            comando.Parameters.AddWithValue("@idProduto",c.idProduto);
+            comando.Parameters.AddWithValue("@idProduto",c.idProdutos);
             comando.Parameters.AddWithValue("@idUsuario",id);
             comando.ExecuteNonQuery();
             conexao.Close();

@@ -1,14 +1,14 @@
 namespace exercicio_3_Alex_Ferreira_Santos.Models
 {
-    public class Curtidos
+    public class Carrinho
     {
-        public int idCurtidos { get; set; }
+        public int idCarrinho { get; set; }
         public string fotoProduto { get; set; }
         public string nomeProduto { get; set; }
         public double precoProduto  {get; set; }
         public string categoriaProduto { get; set; }
         public double promocaoProduto { get; set; }
-        public int idProduto { get; set; }
-        public int? idUsuario { get; set; }
+        public int idProdutos { get; set; }
+        public int? idUsuarios { get; set; }
     }
 }

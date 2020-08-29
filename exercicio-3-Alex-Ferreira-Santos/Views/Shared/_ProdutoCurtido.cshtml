@@ -7,8 +7,8 @@
 {
     <div class="produto">
         <img src="@item.fotoProduto" alt="Produto">
-        <button alt="Curtir" class="icones curtir" id="curtir"></button>
-        <button alt="Carrinho" class="icones loja" id="carrinho"></button>
+        <button alt="Curtir" class="icones curtir" id="curtir" value="@item.idProduto"></button>
+        <button alt="Carrinho" class="icones loja" id="carrinho" value="@item.idProduto"></button>
         <p>@item.nomeProduto</p>
         @if(item.promocaoProduto!=0){
             <p>

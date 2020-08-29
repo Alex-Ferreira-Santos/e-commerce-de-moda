@@ -1,11 +1,14 @@
 @model ViewModel;
+@using Microsoft.AspNetCore.Http
 <link rel="stylesheet" href="~/css/_Produto.css">
 @foreach (Produto item in Model.listaProduto)
 {
     <div class="produto">
         <img src="@item.foto" alt="Produto">
-        <button alt="Curtir" class="icones curtir" id="curtir"></button>
-        <button alt="Carrinho" class="icones loja" id="carrinho"></button>
+        @if(Context.Session.GetInt32("idUsuariousuario")!=null){
+            <button alt="Curtir" class="icones curtir" id="curtir" value="@item.id"></button>
+            <button alt="Carrinho" class="icones loja" id="carrinho" value="@item.id"></button>  
+        }
         <p>@item.nome</p>
         <p>
             <label for="preço antigo" id="antigo"><del>R$<strong>@item.preco</strong></del></label>

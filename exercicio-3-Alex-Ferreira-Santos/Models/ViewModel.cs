@@ -13,5 +13,8 @@ namespace exercicio_3_Alex_Ferreira_Santos.Models
         public ProdutoRepository ProdutoRepository{get;set;}
         public CurtidosRepository CurtidosRepository{get;set;}
         public Curtidos curtidos{get;set;}
+        public Carrinho carrinho{get;set;}
+        public List<Carrinho> listaCarrinho{get;set;}
+        public CarrinhoRepository CarrinhoRepository{get;set;}
     }
 }
