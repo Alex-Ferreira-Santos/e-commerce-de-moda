@@ -40,7 +40,7 @@ $("#usuario").on("click",function(){
     $("main,header,footer").css({opacity:"0.5"})
 })
 $("#fechar").on("click",function(){
-    $("body").css({overflow:"auto",backgroundColor:"#fff",opacity:"1"})
+    $("body").css({overflow:"auto",backgroundColor:"rgba(154, 70, 223, 0.102)",opacity:"1"})
     $("#cadastro").css({display:"none"})
     $("main,header,footer").css({opacity:"1"})
 })
@@ -59,28 +59,6 @@ $("#car").on("click",function(){
     alert("Faça login para acessar o carrinho")
 })
 
-$(".curtir").on("click",function(){
-    var id = document.querySelector("#curtir").value;
-    console.log(id)
-    $.post("/Home/Curtidos",{idProduto:id})
-        .done(function(data){
-            $(".curtidos").html(data);
-        })
-        .fail(function(){
-            alert(id,data)
-        })
-})
 
-$(".loja").on("click",function(){
-    var id = document.querySelector("#carrinho").value;
-    console.log(id)
-    $.post("/Home/Carrinho",{idProdutos:id})
-        .done(function(data){
-            $(".adicionados").html(data);
-        })
-        .fail(function(){
-            alert(id,data)
-        })
-})
 
 

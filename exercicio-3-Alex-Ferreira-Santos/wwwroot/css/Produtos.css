@@ -3,6 +3,7 @@
 }
 header{
     z-index: 11;
+    height: 6.5em;
 }
 nav{
     z-index: 11;
@@ -20,13 +21,16 @@ main{
     outline: none;
     color: white;
     width: 100vw;  
-    background: gray;
+    background: #5E1F91;
     border: none;
     display: block;
     z-index: 1;
     position: fixed;
-    top: 6.7em;
+    top: 6.5em;
     left: 0;
+}
+option{
+    color: white;
 }
 @media(min-width:820px){
     header{

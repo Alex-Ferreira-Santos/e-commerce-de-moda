@@ -37,5 +37,12 @@ namespace exercicio_3_Alex_Ferreira_Santos.Models
             comando.ExecuteNonQuery();
             conexao.Close();
         }
+        public void remove(Carrinho c,int? id){
+            conexao.Open();
+            string sql=$"delete from carrinho where idCarrinho={c.idCarrinho} and idUsuarios={id}";
+            MySqlCommand comando = new MySqlCommand(sql,conexao);
+            comando.ExecuteNonQuery();
+            conexao.Close();
+        }
     }
 }

@@ -1,5 +1,5 @@
 @model ViewModel
-<link rel="stylesheet" href="~/css/_ProdutoCart2.css">
+<link rel="stylesheet" href="~/css/_ProdutoCart.css">
     @foreach (Carrinho item in Model.listaCarrinho)
     {
         <div class="produto">
@@ -10,6 +10,8 @@
             else{
                 <p>@item.nomeProduto <br> Preço: <strong> R$@item.precoProduto</strong></p>
             } 
-            <button>Remover</button> 
+            <button id="remover" class="remover" value="@item.idCarrinho">Remover</button> 
         </div>
     }
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/carrinho2.js"></script>

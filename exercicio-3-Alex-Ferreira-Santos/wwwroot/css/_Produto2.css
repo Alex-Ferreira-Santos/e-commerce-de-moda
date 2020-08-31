@@ -1,7 +1,7 @@
 .produto{
     display: inline-block;
     position: relative;
-    background-color: #b2b2b2;
+    background-color: #b2b2b28c;
     width: 22em;
     height: 24em;
     margin: 0.2em;
@@ -14,6 +14,7 @@
     border-radius: 10px;
     padding: 0.5em;
     background-color: aqua;
+    z-index: 10;
 }
 img{
     position: relative;

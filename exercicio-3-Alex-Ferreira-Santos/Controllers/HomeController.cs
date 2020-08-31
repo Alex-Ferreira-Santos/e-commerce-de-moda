@@ -92,6 +92,14 @@ namespace exercicio_3_Alex_Ferreira_Santos.Controllers
             viewModel.listaCurtidos= viewModel.CurtidosRepository.curtidos(int.Parse(HttpContext.Session.GetInt32("idUsuariousuario").ToString()));
             return PartialView("_ProdutoCurtido",viewModel);
         }
+        [HttpPost]
+        public IActionResult RemoveCurtidos(Curtidos c){
+            ViewModel viewModel = new ViewModel();
+            viewModel.CurtidosRepository = new CurtidosRepository();
+            viewModel.CurtidosRepository.delete(c,HttpContext.Session.GetInt32("idUsuariousuario"));
+            viewModel.listaCurtidos= viewModel.CurtidosRepository.curtidos(int.Parse(HttpContext.Session.GetInt32("idUsuariousuario").ToString()));
+            return PartialView("_ProdutoCurtido",viewModel);
+        }
 
         public IActionResult Carrinho(){
             if(HttpContext.Session.GetInt32("tipoUsuariousuario")==null){
@@ -107,6 +115,15 @@ namespace exercicio_3_Alex_Ferreira_Santos.Controllers
             ViewModel viewModel = new ViewModel();
             viewModel.CarrinhoRepository = new CarrinhoRepository();
             viewModel.CarrinhoRepository.insert(c,HttpContext.Session.GetInt32("idUsuariousuario"));
+            viewModel.listaCarrinho= viewModel.CarrinhoRepository.carrinho(HttpContext.Session.GetInt32("idUsuariousuario"));
+            return PartialView("_ProdutoCart",viewModel);
+        }
+
+        [HttpPost]
+        public IActionResult CarrinhoRemove(Carrinho c){
+            ViewModel viewModel = new ViewModel();
+            viewModel.CarrinhoRepository = new CarrinhoRepository();
+            viewModel.CarrinhoRepository.remove(c,HttpContext.Session.GetInt32("idUsuariousuario"));
             viewModel.listaCarrinho= viewModel.CarrinhoRepository.carrinho(HttpContext.Session.GetInt32("idUsuariousuario"));
             return PartialView("_ProdutoCart",viewModel);
         }

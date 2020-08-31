@@ -2,12 +2,12 @@
 @{
     ViewData["Title"] = "Produtos";
 }
-<link rel="stylesheet" href="~/css/_Produto.css">
+<link rel="stylesheet" href="~/css/_Produto2.css">
 @foreach (Curtidos item in Model.listaCurtidos)
 {
     <div class="produto">
         <img src="@item.fotoProduto" alt="Produto">
-        <button alt="Curtir" class="icones curtir" id="curtir" value="@item.idProduto"></button>
+        <button alt="Curtir" class="icones curtir" id="curtir" value="@item.idCurtidos"></button>
         <button alt="Carrinho" class="icones loja" id="carrinho" value="@item.idProduto"></button>
         <p>@item.nomeProduto</p>
         @if(item.promocaoProduto!=0){
@@ -23,4 +23,5 @@
     </div>
 }
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/js/_Produto.js"></script>
+<script src="~/js/_Produto3.js"></script>
+<script src="~/js/curtidos2.js"></script>
