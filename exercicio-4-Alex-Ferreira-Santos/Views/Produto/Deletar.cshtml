@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Deletar Produto";
+}
+@model Produto
+<link rel="stylesheet" href="~/css/Deletar.css">
+<form method="post" class="text-center text-light">
+    <h2>Edição de Produto</h2>
+
+    <p><label asp-for="id">Digite o id do produto que deseja alterar</label></p>
+    <p><input asp-for="id" class="text-box border-0" placeholder="Digite o id" ></p>
+
+    <p><label asp-for="nome">Nome*</label></p>
+    <p><input type="text" name="nome" id="nome" class="text-box border-0" placeholder="Digite o novo nome" required></p>
+
+    <p><label asp-for="foto">Url da imagem*</label></p>
+    <p><input asp-for="foto" class="text-box border-0" placeholder="Digite a url da imagem" required></p>
+
+    <p><input type="submit" id="Excluir" class="border-0 mb-3" value="Excluir"></p>
+</form>

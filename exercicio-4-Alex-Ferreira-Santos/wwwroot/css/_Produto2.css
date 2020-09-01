@@ -1,0 +1,55 @@
+.produto{
+    background-color: #b2b2b28c;
+    width: 22em;
+    height: 24em;
+    margin: 0.2em;
+    margin-bottom: 2em;
+}
+.produto #novo{
+    left: 1em;
+    top: 1em;
+    border-radius: 10px;
+    background-color: aqua;
+    z-index: 10;
+}
+.produto #link{
+    z-index: 20;
+}
+img{
+    width: 20em;
+    height: 20em;
+}
+.icones{
+    background: none;
+    display: none;
+    width: 2em;
+    height: 2em;
+    right: 0.5em;
+}
+#curtir{
+    outline: none;
+    background-image: url("../images/heart.png");
+    background-size: 2em;
+    transition: 0.5s;
+    top: 0em;
+}
+#curtir:hover{
+    background-image: url("../images/favorite-heart-button.png");
+}
+#carrinho{
+    outline: none;
+    background-image: url("../images/shopping-cart.png");
+    background-size: 2em;
+    transition: 0.5s;
+    top: 2em;
+}
+#carrinho:hover{
+    background-image: url("../images/shopping-cart-black.png");
+}
+#antigo{
+    color: rgba(255, 0, 0, 0.712);
+    margin-right: 4em;
+}
+#atual{
+    color: green;
+}

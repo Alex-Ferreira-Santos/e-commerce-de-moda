@@ -1,0 +1,129 @@
+﻿@model ViewModel
+@using Microsoft.AspNetCore.Http
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Moda</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site2.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="position-fixed w-100 text-light">
+
+        <a asp-action="Index" asp-controller="Home" class="text-light"><h4 id="logo" class="text-center">Smart <span>Style</span></h4></a>
+
+        <div id="search-bar">
+            <input type="text" class="ml-2 mb-2 border-0" name="pesquisa" id="pesquisa" placeholder="pesquisar...">
+            <img src="~/images/magnifying-glass.png" class="position-relative" alt="pesquisa" id="lupa">
+        </div>
+
+        <div class="icons position-absolute">
+            @if(Context.Session.GetInt32("idUsuariousuario")==null){
+                <a asp-action="Carrinho" asp-controller="Home" id="car"><img src="~/images/shopping-cart.png" alt="carrinho"></a>
+                <a asp-action="Curtidos" asp-controller="Home" id="cur"><img src="~/images/heart.png" alt="favoritos"></a>
+            }else{
+                <a asp-action="Carrinho" asp-controller="Home" ><img src="~/images/shopping-cart.png" alt="carrinho"></a>
+                <a asp-action="Curtidos" asp-controller="Home" ><img src="~/images/heart.png" alt="favoritos"></a>
+            }
+            @if(Context.Session.GetInt32("idUsuariousuario")==null){<img src="~/images/avatar.png" alt="usuario" id="usuario">}
+            else{<a asp-action="Logout" asp-controller="Home"><img src="~/images/logout.png" alt="logout" id="logout"></a> }   
+        </div>
+
+        <nav class="text-center">
+            <a href="~/produto/Produtos?categoria='novidade'" class="text-light">novidades</a>
+            <a href="~/produto/Produtos?categoria='masculino'" class="text-light">masculino</a>
+            <a href="~/produto/Produtos?categoria='feminino'" class="text-light">feminino</a>
+            <a href="~/produto/Produtos?categoria='infantil'" class="text-light">infantil</a>
+            <a href="~/produto/Produtos?categoria='calcados'" class="text-light">calçados</a>
+            @if(Context.Session.GetInt32("tipoUsuariousuario")!=null){<a asp-action="menu" asp-controller="Produto" class="text-light">menu</a>}
+        </nav>
+        @if(Context.Session.GetInt32("idUsuariousuario")!=null){<span id="Logout">Olá <b>@Context.Session.GetString("nomeUsuariousuario")</b></span>}
+
+    </header>
+
+    <div class="container">
+
+        <form method="POST" class="cadastro text-center position-fixed" id="cadastro">
+            <img src="~/images/015-close.png" class="position-absolute" alt="fechar" id="fechar">
+            <h3>Cadastro</h3>
+
+            <p><label asp-for="usuario.email">E-mail</label></p>
+            <p><input asp-for="usuario.email" class="border-0" type="email" id="e-mail" placeholder="Digite seu email" required></p>
+
+            <p><label asp-for="usuario.senha">Senha</label></p>
+            <p><input asp-for="usuario.senha" class="border-0" type="password" id="senha" placeholder="Digite sua senha" required></p>
+
+            <p><input type="submit" name="login" value="entrar" id="login" class="button border-0"></p>
+
+            <p>Não tem uma conta? </p>
+
+            <p><input type="button" value="Cadastrar" id="cadastroBtn" class="button border-0"></p>
+        </form>
+
+        <form method="POST" class="text-center position-fixed" id="newUser">
+            <img src="~/images/left-arrow-key-1.png" class="position-absolute" alt="voltar" id="voltar">
+            <h3>Novo usuário</h3>
+
+            <p><label asp-for="usuario.nome">Nome*</label></p>
+            <p><input asp-for="usuario.nome" class="border-0" placeholder="Digite seu nome" required></p>
+
+            <p><label asp-for="usuario.email">E-mail*</label></p>
+            <p><input asp-for="usuario.email" class="border-0" placeholder="Digite seu email" required></p>
+
+            <p><label asp-for="usuario.senha">Senha*</label></p>
+            <p><input asp-for="usuario.senha" class="border-0" type="password" placeholder="Digite sua senha" required></p>
+
+            <p><label asp-for="usuario.nascimento">nascimento*</label></p>
+            <p><input asp-for="usuario.nascimento" class="border-0" type="date" required></p>
+
+            <p><label asp-for="usuario.telefone"> Telefone*</label></p>
+            <p><input asp-for="usuario.telefone" class="border-0" placeholder="Digite seu número" required></p>
+
+            <p><input type="submit" name="login" class="border-0" value="Confirmar" id="confirmar"></p>
+        </form>
+
+        <p id="viewBag" class="text-center position-relative m-auto font-weight-bold">@ViewBag.mensagem</p>
+            
+
+        <main role="main" class="pb-3">     
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="text-light">
+
+        <div id="novidades" class="text-center">
+            <label for="novidades">Receba Novidades</label>
+            <select name="interesse" class="border-bottom text-light" id="interesse">
+                <option value="" class="text-dark">interesse</option>
+                <option value="novidades" class="text-dark">novidades</option>
+                <option value="masculino" class="text-dark">masculino</option>
+                <option value="feminino" class="text-dark">feminino</option>
+                <option value="infantil" class="text-dark">infantil</option>
+                <option value="calçados" class="text-dark">calçados</option>
+            </select>
+            <input type="email" class="border-bottom text-light" name="email" id="email" placeholder="Digite seu email">
+            <input type="submit" class="border-0" value="enviar" id="submit">
+        </div>
+
+        <div id="social-media" class="ml-3">
+            <h3>Siga a Smart Style</h3>
+            <img src="~/images/001-facebook.png" alt="facebook">
+            <img src="~/images/013-twitter.png" alt="twitter">
+            <img src="~/images/011-instagram.png" alt="instagram">
+            <img src="~/images/010-linkedin.png" alt="linkedIn">
+        </div>
+
+        <p id="fale-conosco" class="text-right position-relative">Fale conosco</p>
+        <p id="contato" class="text-right position-relative">contato@gmail.com</p>
+
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

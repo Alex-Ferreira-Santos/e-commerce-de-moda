@@ -1,0 +1,25 @@
+@model ViewModel
+@{
+    ViewData["Title"] = "Carrinho";
+    double precoTotal = 0;
+}
+<link rel="stylesheet" href="~/css/carrinho3.css">
+<aside class="text-center position-fixed">
+    @foreach (Carrinho item in Model.listaCarrinho)
+    {
+        if(item.promocaoProduto!=0){
+                item.precoTotal+=item.promocaoProduto;
+        }
+        else{
+            item.precoTotal+=item.precoProduto;
+        }
+        precoTotal +=item.precoTotal;
+    }
+    <h2 class="position-relative" id="carrinho">Carrinho <img src="../images/shopping-cart-black.png" alt="carrinho" id="black-cart"></h2>
+    <p id="preco">Preço total: <br> R$<strong>@precoTotal</strong></p> 
+    <button class="border-0">Confirmar Compra</button>
+</aside>
+<div class="adicionados position-relative">
+    @await Html.PartialAsync("_ProdutoCart")
+</div>
+

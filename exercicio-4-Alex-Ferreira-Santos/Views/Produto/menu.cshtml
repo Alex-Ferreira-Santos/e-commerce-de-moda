@@ -1,0 +1,18 @@
+@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Menu";
+}
+<link rel="stylesheet" href="~/css/menu.css">
+<menu class="text-center">
+    <h2>Selecione as opções</h2>
+    @if(Context.Session.GetInt32("tipoUsuariousuario")==0){
+        <p><a asp-action="Modificar" asp-controller="Usuario"><button class="border-0">Modificar conta</button></a></p>
+        <p><a asp-action="Excluir" asp-controller="Usuario"><button class="border-0">Excluir conta</button></a></p>
+    }
+    @if(Context.Session.GetInt32("tipoUsuariousuario")==1){
+        <p><a asp-action="Modificar" asp-controller="Usuario"><button class="border-0">Modificar usuário</button></a></p>
+        <p><a asp-action="Inserir" asp-controller="Produto"><button class="border-0">Adicionar produto</button></a></p>
+        <p><a asp-action="Modificar" asp-controller="Produto"><button class="border-0">Modificar produto</button></a></p>
+        <p><a asp-action="Deletar" asp-controller="Produto"><button class="border-0">Excluir produto</button></a></p>
+    }
+</menu>

@@ -1,0 +1,13 @@
+main{
+    position: relative;
+    top: 2em;
+}
+#curtidos{
+    width: 2em;
+    height: 2em;
+}
+@media(min-width:800px){
+    main{
+        top: 0;
+    }
+}

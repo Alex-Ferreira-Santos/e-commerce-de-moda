@@ -1,0 +1,10 @@
+@{
+    ViewData["Title"] = "Curtidos";
+}
+<link rel="stylesheet" href="~/css/curtidos.css">
+<h2 class="text-center" id="heart">Curtidos <img src="~/images/favorite-heart-button.png" alt="curtidos" class="m-0" id="curtidos"></h2>
+<div class="curtidos text-center">
+    @await Html.PartialAsync("_ProdutoCurtido")
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/curtidos2.js"></script>

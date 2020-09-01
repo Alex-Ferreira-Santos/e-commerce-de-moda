@@ -1,0 +1,18 @@
+@{ViewData["Title"] = "Produtos";}
+<link rel="stylesheet" href="~/css/Produtos2.css">
+<select id="filtrar" class="position-fixed d-block border-0 text-light w-100" name="categoria">
+    <option disabled class="text-light" selected value="">Filtrar</option>
+    <option id="Novidades" class="text-light" value="Novidades">novidades</option>
+    <option id="masculino" class="text-light" value="masculino">masculino</option>
+    <option id="feminino" class="text-light" value="feminino">feminino</option>
+    <option id="infantil" class="text-light" value="infantil">infantil</option>
+    <option id="calcados" class="text-light" value="calcados">calçados</option>
+</select>
+<div class="Produtos text-center">
+    @await Html.PartialAsync("_Produto")
+</div>
+@section Scripts{
+    <script src="~/js/Produtos.js"></script>
+}
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

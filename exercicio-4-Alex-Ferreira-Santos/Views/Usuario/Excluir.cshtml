@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Excluir Usuário";
+}
+@model usuario
+@using Microsoft.AspNetCore.Http
+<link rel="stylesheet" href="~/css/Excluir.css">
+<form method="post" class="text-center text-light">
+    <h2>Exclusão de usuários</h2>
+    <input asp-for="id" type="hidden" value="@Context.Session.GetInt32("idUsuariousuario")">
+    <p><label asp-for="email">Email*</label></p>
+    <p><input type="text" name="email" id="Email" class="text-box border-0" placeholder="Digite seu email" required></p>
+
+    <p><label asp-for="senha">Senha*</label></p>
+    <p><input type="password" name="senha" id="senha" class="text-box border-0" placeholder="Digite a senha" required></p>
+
+    <p><label asp-for="nascimento">Nascimento*</label></p>
+    <p><input type="date" name="nascimento" id="nascimento" class="text-box border-0" placeholder="Digite a data de nascimento" required></p>
+
+    <p><label asp-for="telefone">Telefone*</label></p>
+    <p><input type="tel" name="telefone" id="telefone" class="text-box border-0" placeholder="Digite o telefone"required></p>
+
+    <p><input type="submit" class="border-0 mb-3" id="excluir" value="deletar"></p>
+</form>

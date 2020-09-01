@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "Inserir Produto";
+}
+@model Produto
+<link rel="stylesheet" href="~/css/Inserir.css">
+<form method="post" class="text-center text-light">
+    <h2>Inserção de Produto</h2>
+    <p><label asp-for="nome">Nome*</label></p>
+    <p><input type="text" name="nome" id="nome" class="text-box border-0" placeholder="Digite o nome do produto" required></p>
+
+    <p><label asp-for="foto">Url da imagem*</label></p>
+    <p><input asp-for="foto" class="text-box border-0" placeholder="Digite a url da imagem" required></p>
+
+    <p><label asp-for="preco">Preço*</label></p>
+    <p><input asp-for="preco" name="preco" id="preco" class="text-box border-0" placeholder="Digite o preço do produto" required></p>
+
+    <p><label asp-for="promocao">Promoção</label></p>
+    <p><input asp-for="promocao" name="promocao" id="promocao" class="text-box border-0" placeholder="Digite o preço em promoção do produto"></p>
+
+    <p><label asp-for="categoria">Categoria*</label></p>
+    <p><select asp-for="categoria" class="text-box border-0" required>
+        <option disabled selected>Selecione uma opção</option>
+        <option value="masculino">masculino</option>
+        <option value="feminino">feminino</option>
+        <option value="infantil">infantil</option>
+        <option value="calcados">calçados</option>
+    </select></p>
+
+    <p><input type="submit" id="inserir" class="border-0 mb-3" value="inserir"></p>
+</form>

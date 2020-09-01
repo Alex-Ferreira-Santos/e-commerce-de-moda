@@ -1,0 +1,18 @@
+@model ViewModel
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/_ProdutoCart2.css">
+    @foreach (Carrinho item in Model.listaCarrinho)
+    {
+        <div class="produto position-relative mb-3">
+            <a id="link" href="@item.fotoProduto"><img src="@item.fotoProduto" alt="camisa"></a>
+            @if(item.promocaoProduto!=0){
+                <p>@item.nomeProduto <br> Preço: <strong> R$@item.promocaoProduto</strong></p>
+            }
+            else{
+                <p>@item.nomeProduto <br> Preço: <strong> R$@item.precoProduto</strong></p>
+            } 
+            <button id="remover" class="remover border-0 mb-3 text-light" value="@item.idCarrinho">Remover</button> 
+        </div>
+    }
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/carrinho2.js"></script>

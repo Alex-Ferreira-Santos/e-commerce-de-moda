@@ -1,0 +1,37 @@
+*{
+    z-index: 0;
+}
+header{
+    z-index: 11;
+    height: 6.5em;
+}
+nav{
+    z-index: 11;
+    display: none !important;
+}
+main{
+    padding-top: 10em;
+}
+#filtrar{
+    cursor: pointer;
+    text-align-last: center;
+    outline: none;
+    background: #5E1F91;
+    z-index: 1;
+    top: 6.5em;
+    left: 0;
+}
+@media(min-width:820px){
+    header{
+        height: 10vh;
+    }
+    main{
+        padding-top: 8em;
+    }
+    #logo{
+        margin: 0.5em;
+    }
+    #filtrar{
+        top: 4em;
+    }
+}

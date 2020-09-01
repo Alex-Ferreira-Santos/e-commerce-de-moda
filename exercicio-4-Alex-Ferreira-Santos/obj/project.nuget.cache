@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "MWJhK2MdAFAQEfKyqNcFkznWSHos6y4VVI7RPSyz3iZoQjD16u0ekOAjQl4+FjAtPK9Fu5eQM7G8Crc59mZRXg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-4-Alex-Ferreira-Santos\\exercicio-4-Alex-Ferreira-Santos.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Casa\\.nuget\\packages\\mysqlconnector\\1.0.1\\mysqlconnector.1.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
