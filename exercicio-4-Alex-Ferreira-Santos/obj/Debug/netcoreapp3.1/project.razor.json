@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\exercicio-3-Alex-Ferreira-Santos.csproj",
+  "FilePath": "c:\\Users\\W10\\Documents\\GitHub\\e-commerce-de-moda\\exercicio-4-Alex-Ferreira-Santos\\exercicio-4-Alex-Ferreira-Santos.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -14389,101 +14389,101 @@
     ],
     "CSharpLanguageVersion": 800
   },
-  "RootNamespace": "exercicio_3_Alex_Ferreira_Santos",
+  "RootNamespace": "exercicio_4_Alex_Ferreira_Santos",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Shared\\_ProdutoCart.cshtml",
-      "TargetPath": "Views\\Shared\\_ProdutoCart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Usuario\\Modificar.cshtml",
-      "TargetPath": "Views\\Usuario\\Modificar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Home\\Carrinho.cshtml",
-      "TargetPath": "Views\\Home\\Carrinho.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Shared\\_ProdutoPromo.cshtml",
-      "TargetPath": "Views\\Shared\\_ProdutoPromo.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Shared\\_ProdutoNovo.cshtml",
-      "TargetPath": "Views\\Shared\\_ProdutoNovo.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Produto\\menu.cshtml",
-      "TargetPath": "Views\\Produto\\menu.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Shared\\_ProdutoCurtido.cshtml",
-      "TargetPath": "Views\\Shared\\_ProdutoCurtido.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Home\\Curtidos.cshtml",
-      "TargetPath": "Views\\Home\\Curtidos.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Usuario\\Excluir.cshtml",
-      "TargetPath": "Views\\Usuario\\Excluir.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Produto\\Modificar.cshtml",
-      "TargetPath": "Views\\Produto\\Modificar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Produto\\Produtos.cshtml",
-      "TargetPath": "Views\\Produto\\Produtos.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Produto\\Inserir.cshtml",
-      "TargetPath": "Views\\Produto\\Inserir.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Shared\\_Produto.cshtml",
+      "FilePath": "c:\\Users\\W10\\Documents\\GitHub\\e-commerce-de-moda\\exercicio-4-Alex-Ferreira-Santos\\Views\\Shared\\_Produto.cshtml",
       "TargetPath": "Views\\Shared\\_Produto.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Casa\\OneDrive\\Documents\\curso senac\\UC-2\\exercicio-3-Alex-Ferreira-Santos\\Views\\Produto\\Deletar.cshtml",
+      "FilePath": "c:\\Users\\W10\\Documents\\GitHub\\e-commerce-de-moda\\exercicio-4-Alex-Ferreira-Santos\\Views\\Shared\\_ProdutoCart.cshtml",
+      "TargetPath": "Views\\Shared\\_ProdutoCart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\W10\\Documents\\GitHub\\e-commerce-de-moda\\exercicio-4-Alex-Ferreira-Santos\\Views\\Produto\\Modificar.cshtml",
+      "TargetPath": "Views\\Produto\\Modificar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\W10\\Documents\\GitHub\\e-commerce-de-moda\\exercicio-4-Alex-Ferreira-Santos\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\W10\\Documents\\GitHub\\e-commerce-de-moda\\exercicio-4-Alex-Ferreira-Santos\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\W10\\Documents\\GitHub\\e-commerce-de-moda\\exercicio-4-Alex-Ferreira-Santos\\Views\\Usuario\\Modificar.cshtml",
+      "TargetPath": "Views\\Usuario\\Modificar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\W10\\Documents\\GitHub\\e-commerce-de-moda\\exercicio-4-Alex-Ferreira-Santos\\Views\\Produto\\Produtos.cshtml",
+      "TargetPath": "Views\\Produto\\Produtos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\W10\\Documents\\GitHub\\e-commerce-de-moda\\exercicio-4-Alex-Ferreira-Santos\\Views\\Shared\\_ProdutoNovo.cshtml",
+      "TargetPath": "Views\\Shared\\_ProdutoNovo.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\W10\\Documents\\GitHub\\e-commerce-de-moda\\exercicio-4-Alex-Ferreira-Santos\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\W10\\Documents\\GitHub\\e-commerce-de-moda\\exercicio-4-Alex-Ferreira-Santos\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\W10\\Documents\\GitHub\\e-commerce-de-moda\\exercicio-4-Alex-Ferreira-Santos\\Views\\Home\\Curtidos.cshtml",
+      "TargetPath": "Views\\Home\\Curtidos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\W10\\Documents\\GitHub\\e-commerce-de-moda\\exercicio-4-Alex-Ferreira-Santos\\Views\\Produto\\Deletar.cshtml",
       "TargetPath": "Views\\Produto\\Deletar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\W10\\Documents\\GitHub\\e-commerce-de-moda\\exercicio-4-Alex-Ferreira-Santos\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\W10\\Documents\\GitHub\\e-commerce-de-moda\\exercicio-4-Alex-Ferreira-Santos\\Views\\Produto\\menu.cshtml",
+      "TargetPath": "Views\\Produto\\menu.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\W10\\Documents\\GitHub\\e-commerce-de-moda\\exercicio-4-Alex-Ferreira-Santos\\Views\\Produto\\Inserir.cshtml",
+      "TargetPath": "Views\\Produto\\Inserir.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\W10\\Documents\\GitHub\\e-commerce-de-moda\\exercicio-4-Alex-Ferreira-Santos\\Views\\Home\\Carrinho.cshtml",
+      "TargetPath": "Views\\Home\\Carrinho.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\W10\\Documents\\GitHub\\e-commerce-de-moda\\exercicio-4-Alex-Ferreira-Santos\\Views\\Usuario\\Excluir.cshtml",
+      "TargetPath": "Views\\Usuario\\Excluir.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\W10\\Documents\\GitHub\\e-commerce-de-moda\\exercicio-4-Alex-Ferreira-Santos\\Views\\Shared\\_ProdutoPromo.cshtml",
+      "TargetPath": "Views\\Shared\\_ProdutoPromo.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\W10\\Documents\\GitHub\\e-commerce-de-moda\\exercicio-4-Alex-Ferreira-Santos\\Views\\Shared\\_ProdutoCurtido.cshtml",
+      "TargetPath": "Views\\Shared\\_ProdutoCurtido.cshtml",
       "FileKind": "mvc"
     }
   ],
